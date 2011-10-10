@@ -1,0 +1,27 @@
+<project name="json-antlr" default="antlr" basedir=".">
+
+    <target name="antlr">
+        <java classname="org.antlr.Tool"
+              fork="true"
+              failonerror="true"
+              classpath="./lib/antlr-3.1.3.jar">
+
+            <arg value="-verbose"/>
+            <arg value="-o"/>
+            <arg path="./src/net/nextquestion/json"/>
+            <arg path="./grammar/JSON.g"/>
+        </java>
+
+        <java classname="org.antlr.Tool"
+              fork="true"
+              failonerror="true"
+              classpath="./lib/antlr-3.1.3.jar">
+
+            <arg value="-verbose"/>
+            <arg value="-o"/>
+            <arg path="./src/net/nextquestion/json"/>
+            <arg path="./grammar/JSONTree.g"/>
+        </java>
+    </target>
+
+</project>
