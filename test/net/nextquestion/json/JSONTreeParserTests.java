@@ -1,11 +1,10 @@
 package net.nextquestion.json;
 
-import org.testng.annotations.Test;
-import org.antlr.runtime.RecognitionException;
+import org.antlr.runtime.*;
+import org.testng.annotations.*;
 
-import java.io.IOException;
-import java.util.List;
-import java.util.Map;
+import java.io.*;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -82,6 +81,12 @@ public class JSONTreeParserTests extends AbstractJSONTests {
         assert "one".equals(firstValue) : "Expected \"one\" at (0) but found " + firstValue;
         int secondValue = (Integer) result.get(1);
         assert secondValue == 2 : "Expected integer 2 at (1) but found " + secondValue;
+    }
+
+    @Test(expectedExceptions = NoViableAltException.class)
+    public void testSyntaxError() throws RecognitionException, IOException {
+        JSONTree parser = createTreeParser("[\"one\n\",]");
+        parser.value();
     }
 
     protected void testViaTreeParser(String testString, Object expected) throws IOException, RecognitionException {

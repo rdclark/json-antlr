@@ -66,8 +66,8 @@ number	: n=Number {Pattern.matches("(0|(-?[1-9]\\d*))(\\.\\d+)?", n.getText())}?
 	  -> ^(NUMBER Number Exponent?)
 	;
 
-object	: '{' members '}' 
-	  -> ^(OBJECT members)
+object	: '{' members? '}' 
+	  -> ^(OBJECT members?)
 	;
 	
 array	: '[' elements ']'

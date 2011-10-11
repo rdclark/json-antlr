@@ -20,6 +20,7 @@ public abstract class AbstractJSONTests {
         JSONParser parser = createParser(source);
         ParserRuleReturnScope result = parser.value();
         String st = toStringTree(result);
+        System.out.println(st);
         assert st.equals(expected) : "Expected " + expected + ", but found " + st;
     }
 
