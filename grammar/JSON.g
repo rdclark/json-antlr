@@ -89,7 +89,7 @@ Number	: '-'? Digit+ ( '.' Digit+)?;
 Exponent: ('e'|'E') '-'? ('1'..'9') Digit*;
 
 String 	:
-	'"' ( EscapeSequence | ~('\u0000'..'\u001f' | '\\' | '\"' | '/') )* '"'
+	'"' ( EscapeSequence | ~('\u0000'..'\u001f' | '\\' | '\"' ) )* '"'
 	;
 
 WS: (' '|'\n'|'\r'|'\t')+ {$channel=HIDDEN;} ; // ignore whitespace 

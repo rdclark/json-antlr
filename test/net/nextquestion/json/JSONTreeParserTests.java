@@ -21,6 +21,11 @@ public class JSONTreeParserTests extends AbstractJSONTests {
     }
 
     @Test
+    public void testUri() throws IOException, RecognitionException {
+        testViaTreeParser("\"http://www.someuri.com\"", "http://www.someuri.com");
+    }
+
+    @Test
     public void testStringWithNewine() throws IOException, RecognitionException {
         testViaTreeParser("\"new\\nline\"", "new\nline");
     }
@@ -70,6 +75,15 @@ public class JSONTreeParserTests extends AbstractJSONTests {
         assert firstValue == 2 : "Expected integer 2 at key \"one\" but found " + firstValue;
         int secondValue = (Integer) result.get("two");
         assert secondValue == 3 : "Expected integer 3 at key \"two\" but found " + secondValue;
+    }
+
+    @Test
+    public void testEmptyObject() throws IOException, RecognitionException {
+        JSONTree parser = createTreeParser("{\"one\": {} }");
+        Map result = (Map) parser.value();
+        assert result != null : "null result";
+        Map firstValue = (Map) result.get("one");
+        assert firstValue.size() == 0;
     }
 
     @Test
