@@ -1,4 +1,4 @@
-// $ANTLR 3.1.3 Mar 17, 2009 19:23:44 /Users/jim/work/code/github/json-antlr/grammar/JSON.g 2011-10-10 00:52:05
+// $ANTLR 3.1.3 Mar 17, 2009 19:23:44 /Users/jim/work/code/github/json-antlr/grammar/JSON.g 2011-10-29 10:28:36
 
 package net.nextquestion.json;
 
@@ -430,11 +430,11 @@ public class JSONLexer extends Lexer {
         try {
             int _type = String;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/jim/work/code/github/json-antlr/grammar/JSON.g:91:9: ( '\"' ( EscapeSequence | ~ ( '\\u0000' .. '\\u001f' | '\\\\' | '\\\"' | '/' ) )* '\"' )
-            // /Users/jim/work/code/github/json-antlr/grammar/JSON.g:92:2: '\"' ( EscapeSequence | ~ ( '\\u0000' .. '\\u001f' | '\\\\' | '\\\"' | '/' ) )* '\"'
+            // /Users/jim/work/code/github/json-antlr/grammar/JSON.g:91:9: ( '\"' ( EscapeSequence | ~ ( '\\u0000' .. '\\u001f' | '\\\\' | '\\\"' ) )* '\"' )
+            // /Users/jim/work/code/github/json-antlr/grammar/JSON.g:92:2: '\"' ( EscapeSequence | ~ ( '\\u0000' .. '\\u001f' | '\\\\' | '\\\"' ) )* '\"'
             {
             match('\"'); 
-            // /Users/jim/work/code/github/json-antlr/grammar/JSON.g:92:6: ( EscapeSequence | ~ ( '\\u0000' .. '\\u001f' | '\\\\' | '\\\"' | '/' ) )*
+            // /Users/jim/work/code/github/json-antlr/grammar/JSON.g:92:6: ( EscapeSequence | ~ ( '\\u0000' .. '\\u001f' | '\\\\' | '\\\"' ) )*
             loop7:
             do {
                 int alt7=3;
@@ -443,7 +443,7 @@ public class JSONLexer extends Lexer {
                 if ( (LA7_0=='\\') ) {
                     alt7=1;
                 }
-                else if ( ((LA7_0>=' ' && LA7_0<='!')||(LA7_0>='#' && LA7_0<='.')||(LA7_0>='0' && LA7_0<='[')||(LA7_0>=']' && LA7_0<='\uFFFF')) ) {
+                else if ( ((LA7_0>=' ' && LA7_0<='!')||(LA7_0>='#' && LA7_0<='[')||(LA7_0>=']' && LA7_0<='\uFFFF')) ) {
                     alt7=2;
                 }
 
@@ -457,9 +457,9 @@ public class JSONLexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-            	    // /Users/jim/work/code/github/json-antlr/grammar/JSON.g:92:25: ~ ( '\\u0000' .. '\\u001f' | '\\\\' | '\\\"' | '/' )
+            	    // /Users/jim/work/code/github/json-antlr/grammar/JSON.g:92:25: ~ ( '\\u0000' .. '\\u001f' | '\\\\' | '\\\"' )
             	    {
-            	    if ( (input.LA(1)>=' ' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='.')||(input.LA(1)>='0' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
+            	    if ( (input.LA(1)>=' ' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
 
             	    }

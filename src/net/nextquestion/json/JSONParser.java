@@ -1,4 +1,4 @@
-// $ANTLR 3.1.3 Mar 17, 2009 19:23:44 /Users/jim/work/code/github/json-antlr/grammar/JSON.g 2011-10-10 00:52:05
+// $ANTLR 3.1.3 Mar 17, 2009 19:23:44 /Users/jim/work/code/github/json-antlr/grammar/JSON.g 2011-10-29 10:28:35
 
 package net.nextquestion.json;
 
@@ -446,7 +446,7 @@ public class JSONParser extends Parser {
 
 
             // AST REWRITE
-            // elements: Number, Exponent
+            // elements: Exponent, Number
             // token labels: 
             // rule labels: retval
             // token list labels: 
