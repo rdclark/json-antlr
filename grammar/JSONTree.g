@@ -150,7 +150,7 @@ number	returns [Object result]
 
 array	returns [List list]
 @init{ list = new ArrayList(); }
-	: ^(ARRAY (v=value {$list.add(v); })+ )
+	: ^(ARRAY (v=value {$list.add(v); })* )
 	;
 	
 pair [Map map]

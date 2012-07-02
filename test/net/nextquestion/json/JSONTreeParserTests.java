@@ -105,7 +105,7 @@ public class JSONTreeParserTests extends AbstractJSONTests {
         assert result.size() == 0 : "nonzero length result";
     }
 
-    @Test(expectedExceptions = NoViableAltException.class)
+    @Test(expectedExceptions = MismatchedTokenException.class)
     public void testSyntaxError() throws RecognitionException, IOException {
         JSONTree parser = createTreeParser("[\"one\n\",]");
         parser.value();

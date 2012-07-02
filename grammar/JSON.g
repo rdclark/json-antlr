@@ -70,8 +70,8 @@ object	: '{' members? '}'
 	  -> ^(OBJECT members?)
 	;
 	
-array	: '[' elements ']'
-	  -> ^(ARRAY elements)
+array	: '[' elements? ']'
+	  -> ^(ARRAY elements?)
 	;
 
 elements: value (COMMA! value)*

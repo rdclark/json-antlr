@@ -98,6 +98,11 @@ public class JSONParserTests extends AbstractJSONTests {
     }
 
     @Test
+    public void testEmptyArray() throws IOException, RecognitionException {
+        testViaStringTree("[]", "ARRAY");
+    }
+
+    @Test
     public void testTrue() throws IOException, RecognitionException {
         testViaStringTree("true", "TRUE");
     }
