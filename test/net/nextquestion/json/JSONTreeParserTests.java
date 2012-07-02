@@ -96,6 +96,14 @@ public class JSONTreeParserTests extends AbstractJSONTests {
         int secondValue = (Integer) result.get(1);
         assert secondValue == 2 : "Expected integer 2 at (1) but found " + secondValue;
     }
+    
+    @Test
+    public void testEmptyArray() throws IOException, RecognitionException {
+        JSONTree parser = createTreeParser("[  ]");
+        List result = (List) parser.value();
+        assert result != null : "null result";
+        assert result.size() == 0 : "nonzero length result";
+    }
 
     @Test(expectedExceptions = NoViableAltException.class)
     public void testSyntaxError() throws RecognitionException, IOException {
